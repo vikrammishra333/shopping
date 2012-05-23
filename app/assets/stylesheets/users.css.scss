@@ -1,3 +1,180 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.transitional-wide #content{
+    width: 100%;
+}
+
+ul#breadcrumbs {
+    margin-bottom: 0;
+}
+
+#breadcrumbs {
+    display: none;
+}
+
+#breadcrumbs {
+    clear: left;
+    margin: 0 auto 36px;
+    position: relative;
+    width: 980px;
+}
+
+#breadcrumbs {
+    border-bottom: 1px solid #EEEEEE;
+    color: #999999;
+    font-size: 11px;
+    line-height: 16px;
+    list-style: none outside none;
+    padding: 6px 0 6px 1px;
+}
+
+.row {
+    clear: left;
+    margin: 0 auto 36px;
+    position: relative;
+    width: 980px;
+}
+.row.row-narrow {
+    margin: 0 auto;
+    padding-top: 21px;
+    width: 665px;
+}
+.form-container {
+    background-color: #EDEDE7;
+    border-radius: 9px 9px 9px 9px;
+    padding: 4px;
+}
+.form-container-inner {
+    background-color: #FFFFFF;
+    border: 1px solid #DADCDC;
+    border-radius: 5px 5px 5px 5px;
+}
+.heading {
+    float: left;
+    padding-top: 18px;
+    position: relative;
+    width: 100%;
+}
+.form-container .heading {
+    background-color: #F5F5F1;
+    border-radius: 5px 5px 0 0;
+    border-top: 1px solid #FFFFFF;
+    float: none;
+    margin: 0;
+    padding: 25px 21px 28px;
+    width: auto;
+}
+.form-container .heading h1 {
+    color: #444444;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 26px;
+    width: 500px;
+}
+
+.heading h1 {
+    color: #080808;
+    display: inline;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 18px;
+    vertical-align: baseline;
+}
+
+h1 {
+    font-size: 16px;
+}
+
+.form-container .heading a.signin-link {
+    font-size: 16px;
+    line-height: 18px;
+    position: absolute;
+    right: 21px;
+    top: 30px;
+}
+.pane .connect-wrap {
+    border-top: 1px solid #DFE1E1;
+}
+
+.connect-wrap {
+    padding: 28px 21px 27px;
+}
+
+#facebook-register {
+    float: left;
+    margin-right: 10px;
+}
+
+.button-fb.button-large {
+    background-color: #3866B0;
+    border-color: #728FC4;
+    padding-left: 0;
+}
+
+.button-large {
+    background-position: 0 -1px;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px !important;
+    padding: 0 13px;
+}
+
+.button-small, .button-medium, .google-translate-control .goog-te-gadget-link, .button-large, .registry-button-container, .button-fave {
+    background: url("buttons-master.png") repeat-x scroll 0 -121px #1B9DBC;
+    border-color: #67BDD4 #4AB1CC #359BBD;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 #E8E8E8;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 23px;
+    line-height: 23px;
+    margin-bottom: 9px;
+    outline: 0 none;
+    padding: 0 11px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: auto;
+}
+
+#fb-register-container .spinner-small {
+    float: left;
+    margin-top: 10px;
+}
+
+.spinner-small {
+    background: url("spinner16.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    width: 16px;
+}
+
+.pane form .connect-wrap p {
+    color: #888888;
+    margin: 0;
+}
+
+.pane form p {
+    clear: both;
+    color: #666666;
+    margin-left: 135px;
+}
+
+.or {
+    background-color: #F5F5F1;
+    border-bottom: 1px solid #DFE1E1;
+    border-top: 1px solid #DFE1E1;
+    color: #999999;
+    font-size: 16px;
+    padding: 11px 21px 14px;
+}
+
+.pane .wrap {
+    padding: 31px 21px;
+}

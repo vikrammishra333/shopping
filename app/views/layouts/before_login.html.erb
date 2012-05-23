@@ -7,16 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="main-body">
-    <div id="header">
+  <div id="main-body" class="transitional-wide">
+    <div id="header" class="header">
      <%= render 'layouts/header' %>
     </div>
     <div style="clear:both"></div>
-    <div id="content">
+    <div id="content" class="clear">
        <%= yield %>
     </div>
     <div style="clear:both"></div>
-    <hr class="footer-separator" />
     <div id="footer"
       <%= render 'layouts/footer' %>
     </div>

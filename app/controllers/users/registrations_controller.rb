@@ -18,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def load_assets
     AssetManager.include_local_library [:application]
-    AssetManager.include_css [:users]
+    AssetManager.include_css [:application, :users]
   end
   
 end

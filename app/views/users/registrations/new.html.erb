@@ -1,34 +1,73 @@
-<h2>Sign up</h2>
+<ul class="clear" id="breadcrumbs">
+  <li>
+    <a href="/">Home</a>
+    <span class="separator">›</span>
+  </li>
+  <li>Register</li>
+</ul>
+<div class="row row-narrow">
+  <div style="display: none;" class="message-container message-container-connections"></div>
+  <div class="form-container">
+    <div class="form-container-inner clear">
+      <div class="heading">
+        <h1>Create an Etsy account and start shopping</h1>
+        <a class="signin-link" href="https://www.etsy.com/signin?from_page=http%3A%2F%2Fwww.etsy.com%2Findex.php">Sign In</a>
+      </div>
+      <div class="pane clear" id="register">
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :id => "registration-form") do |f| %>
+          <div id="ext-acct-connect" class="connect-wrap">
+            <div id="fb-register-container">
+              <a class="button-large button-fb" id="facebook-register"><span>Sign Up Using Facebook</span></a>
+              <p>It's fast and easy. We'll never post without your permission.</p>
+            </div>
+            <div style="display: none;" class="spinner-small"></div>
+            <input type="hidden" value="" name="external_account_id" />
+            <input type="hidden" value="" name="external_avatar" />
+            <input type="hidden" value="" name="external_username" />
+            <input type="hidden" value="" name="external_account_type_name" />
+          </div>
+          <div class="or">
+            or <span>sign up with your email</span>
+          </div>
+          <%= 
+           #devise_error_messages!
+          %>
+          <div class="wrap clear"
+            <div class="input-group" id="first_name_group">
+              <%= f.label :first_name, "First Name:" %>
+              <%= f.email_field :first_name %>
+            </div>
+            <div class="input-group" id="last_name_group">
+              <%= f.label :last_name, "Last Name:" %>
+              <%= f.email_field :last_name %>
+            </div>
+            <div class="input-group" id="email_group">
+              <%= f.label :email, "Email:" %>
+              <%= f.email_field :email %>
+            </div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+            <div class="input-group">
+              <%= f.label :password, "Password:" %>
+              <%= f.password_field :password %>
+            </div>
 
-  <div>
-    <%= f.label :first_name, "First Name:" %>
-    <%= f.email_field :first_name %>
-  </div>
-  <div>
-    <%= f.label :last_name, "Last Name:" %>
-    <%= f.email_field :last_name %>
-  </div>
-  <div>
-    <%= f.label :email, "Email:" %>
-    <%= f.email_field :email %>
-  </div>
+            <div class="input-group">
+              <%= f.label :password_confirmation, "Re-Enter Password:" %>
+              <%= f.password_field :password_confirmation %>
+            </div>
 
-  <div>
-    <%= f.label :password, "Password:" %>
-    <%= f.password_field :password %>
+            <div >
+              <%= f.submit "Sign up" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div>
-    <%= f.label :password_confirmation, "Re-Enter Password:" %>
-    <%= f.password_field :password_confirmation %>
-  </div>
 
-  <div>
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
 
-<%= render :partial => "devise/shared/links" %>
+<%=
+#render :partial => "devise/shared/links"
+%>

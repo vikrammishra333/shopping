@@ -1,0 +1,180 @@
+<h1 id="etsy">
+  <%= link_to "Etsy", "http://www.etsy.com/?ref=so_home" %>
+</h1>
+<div id="meta-group" class="clear">
+  <ul id="user-nav">
+    <li class="first">
+      <%=  link_to "Buy", "http://www.etsy.com/buy?ref=so_buy", :title => "Buy on Etsy" %>
+    </li>
+    <li>
+      <%=  link_to "Sell", "http://www.etsy.com/sell?ref=so_sell", :title => "Sell on Etsy" %>
+    </li>
+    <li>
+      <%=  link_to "Registry", "http://www.etsy.com/registry?ref=so_registry", :title => "Create Your Registry" %>
+    </li>
+    <li class="has-nav">
+      <%= link_to "Community", "http://www.etsy.com/community?ref=so_com" %>
+      <div class="tt tt-header-nav bottom" id="community-nav-popout" style="position: absolute; top: 35.5px; left: 288.5px; display: none;">
+        <div class="tt-inner">
+          <div class="section side-tabbed-nav" id="nav">
+            <ul>
+              <li>
+                <%= link_to "Community", "/community" %>
+              </li>
+              <li>
+                <%= link_to "Events", "/community/events" %>
+              </li>
+              <li>
+                <%= link_to "Online Labs", "/community/eonline-labs" %>
+              </li>
+              <li>
+                <%= link_to "Teams", "/teams" %>
+              </li>
+              <li class=" last">
+                <%= link_to "Forums", "/forums" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <span class="tt-arrow"></span>
+      </div>
+    </li>
+    <li class="has-nav">
+      <%= link_to "Blogs", "http://www.etsy.com/blog/en/?ref=so_blog" %>
+      <div class="tt tt-header-nav bottom" id="blog-nav-popout">
+        <div class="tt-inner">
+          <div class="section side-tabbed-nav" id="nav">
+            <ul>
+              <li class="active">
+                <%= link_to "Etsy Blog", "/blog/en" %>
+              </li>
+              <li class="active">
+                <%= link_to "Etsy News", "/blog/news" %>
+              </li>
+              <li class="last">
+                <%= link_to "Seller Handbook", "/blog/en/category/seller-handbook/" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <span class="tt-arrow"></span>
+      </div>
+    </li>
+    <li>
+      <%= link_to "Mobile", "http://www.etsy.com/mobile?ref=so_mob", :title => "Etsy for Mobile" %>
+    </li>
+  </ul>
+  <ul id="meta-nav">
+    <% if signed_in? %>
+      <li>
+        <span>
+          Hi, <%= link_to "#{current_user.first_name}", "http://www.etsy.com/people/vikrammishra?ref=si_pr", :class => "profile-link" %>
+        </span>
+      </li>
+      <li class="has-nav">
+        <%= link_to "Your Account", "/your/purchases" %>
+        <div class="tt tt-header-nav bottom" id="your-etsy-nav-popout">
+          <div class="tt-inner">
+            <ul class="">
+              <li class="purchases quick-link"><a href="/your/purchases">Purchases</a></li>
+              <li class="feedback quick-link">
+                <%= link_to "Feedback", "/feedback/awaiting" %>
+              </li>
+              <li class="profile quick-link"><%= link_to "Public Profile", "/your/profile" %></li>
+              <li class="account-info quick-link"><%= link_to "Settings", "/your/account" %></li>
+              <li class="applications quick-link"><%= link_to "Apps", "/your/apps" %></li>
+            </ul>
+            <h3 class="shop-promote">Promote</h3>
+            <ul class="last">
+              <li class="mini popout"><%= link_to "Etsy Mini", "/your/mini" %></li>
+            </ul>
+          </div>
+          <span class="tt-arrow"></span>
+        </div>
+      </li>
+    <% end %>
+    <li>
+      <%= link_to "Help", "http://www.etsy.com/help?ref=si_help", :id => "header_help_link"%>
+    </li>
+    <% if signed_in? %>
+      <li>
+        <%= link_to "Sign Out", "http://www.etsy.com/logout.php", :id => "sign-out", :title => "Sign Out" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div role="navigation" class="clear" id="navigation-group">
+  <ul id="main-nav">
+    <% if not signed_in? %>
+    <li class="register-link">
+      <%= link_to "Register", "https://www.etsy.com/join?from_page=http%3A%2F%2Fwww.etsy.com%2Findex.php&amp;ref=so_reg", :id => "register", :title => "Register"%>
+    </li>
+    <li class="sign-in-link">
+       <%= link_to "Sign In", "https://www.etsy.com/signin?from_page=http%3A%2F%2Fwww.etsy.com%2Findex.php", :id => "sign-in", :class => "inline-overlay-trigger", :title => "Sign in to your Etsy account"%>
+    </li>
+    <% else %>
+      <li class="activity">
+        <a id="activity" href="http://www.etsy.com/your/activity?ref=si_act" class="tt-hover-trigger">
+          <span>Activity Feed</span>
+        </a>
+      </li>
+      <li>
+        <a id="convos" href="https://www.etsy.com/conversations?ref=si_con" class="tt-hover-trigger">
+          <span>Conversations</span>
+        </a>
+      </li>
+      <li>
+      <a id="favorites" href="http://www.etsy.com/people/vikrammishra/favorites?ref=si_fav" class="tt-hover-trigger">
+        <span>Favourites</span>
+      </a>
+      </li>
+    <% end %>
+  </ul>
+  <input type="hidden" value="1" id="search-js-router-enabled" />
+  <input type="hidden" value="India" id="search-location-name" />
+  <input type="hidden" value="1" id="search-is-default-language" />
+  <input type="hidden" value="" id="search-region-preference" />
+  <input type="hidden" value="IN" id="search-region-detected" />
+
+  <form class="" id="search-bar" action="http://www.etsy.com/search.php">
+    <div id="search-facet" aria-haspopup="true" tabindex="0" id="search-facet" style="-moz-user-select: none; cursor: default;" class="">
+      <label for="search-query">
+        Handmade
+      </label>
+      <iframe frameborder="0" title="" longdesc="Decorative" tabindex="-1" id="search-facet-shim" src="javascript:false;" style="display: none; width: 178px; height: 170px;"></iframe>
+      <ul tabindex="0" class="closed" id="search-facet-list">
+        <li class="handmade">
+          Handmade
+        </li>
+        <li class="vintage">
+          Vintage
+        </li>
+        <li class="supplies">
+          Supplies
+        </li>
+        <li class="all">
+          All Items
+        </li>
+        <li class="people">
+          People
+        </li>
+        <li class="shops">
+          Shops
+        </li>
+      </ul>
+    </div>
+    <div class="input-group">
+      <input type="text" tabindex="0" class="text " id="search-query" name="search_query" value="" autocomplete="off" />
+      <div id="search-suggestions"></div>
+      <button type="submit" name="search_submit" id="search_submit">
+          Search
+      </button>
+    </div>
+    <input type="hidden" id="search-type" name="search_type" value="handmade" />
+  </form>
+  <div id="cart">
+    <a id="cart_ref" title="Your Shopping Cart" href="http://www.etsy.com/cart?ref=so_cart">
+      <span class="string">Cart</span>
+    </a>
+  </div>
+</div>
