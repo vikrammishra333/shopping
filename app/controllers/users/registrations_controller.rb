@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
-  before_filter :load_js
+  before_filter :load_assets
 
   def new
     super
@@ -16,8 +16,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
 
-  def load_js
-    
+  def load_assets
+    AssetManager.include_local_library [:application]
+    AssetManager.include_css [:users]
   end
   
 end
