@@ -25,6 +25,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'client_side_validations'
 gem "paperclip"
+gem 'passenger'
 
 
 # To use ActiveModel has_secure_password
