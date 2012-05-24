@@ -39,7 +39,7 @@ ul#breadcrumbs {
 .row.row-narrow {
     margin: 0 auto;
     padding-top: 21px;
-    width: 665px;
+    width: 775px;
 }
 .form-container {
     background-color: #EDEDE7;
@@ -174,7 +174,304 @@ h1 {
     font-size: 16px;
     padding: 11px 21px 14px;
 }
+.or span {
+    color: #444444;
+}
 
 .pane .wrap {
     padding: 31px 21px;
+}
+
+.input-group:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+.input-group {
+    min-height: 1%;
+    padding-bottom: 12px;
+}
+
+.input-group {
+    clear: left;
+    position: relative;
+}
+
+.input-group .label, .input-group label {
+    color: #333333;
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-right: 15px;
+    margin-top: 6px;
+    text-align: right;
+    width: 200px;
+}
+
+.input-group input {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #959595 #D3D3D3 #D3D3D3 #959595;
+    border-style: solid;
+    border-width: 1px;
+    color: #333333;
+    font-family: arial;
+    font-size: 12px;
+    margin: 0 0 0.2em;
+    padding: 6px;
+    float: left;
+    width: 235px;
+}
+.inline-notice {
+    clear: none;
+    float:left;
+    color: #939393;
+    margin: -2px 0 0;
+    padding: 0 8px 0 10px;
+    width: 235px;
+}
+
+.inline-input-error-message {
+    border: 1px solid pink;
+    padding: 5px 8px;
+}
+
+.inline-disclaimer-message {
+    color: #939393;
+    display: none;
+    float: left;
+    margin-top: -3px;
+    padding: 0 8px;
+}
+
+.inline-disclaimer-message, .inline-input-error-message {
+    clear: none;
+    margin-bottom: 0;
+    margin-left: 2px;
+    width: 231px;
+}
+#valid-email-disclaimer {
+    color: #333333;
+    display: none;
+}
+.inline-input-error-message {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFEEEE;
+    border-color: -moz-use-text-color pink pink;
+    border-right: 1px solid pink;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    clear: left;
+    color: #A80308;
+    float: left;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    margin-left:215px;
+}
+
+.radio-group {
+    color: #333333;
+    margin-left: 215px;
+    padding-bottom: 12px;
+}
+
+.radio-group {
+    font-size: 12px;
+    line-height: 18px;
+}
+.radio-group label {
+    display: inline;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 10px;
+    margin-top: 0;
+}
+
+input[type=radio]{
+    display:inline;
+}
+.pane hr {
+    background-color: #EEEEEE;
+    border: 0 none;
+    clear: both;
+    color: #EEEEEE;
+    height: 1px;
+    margin-bottom: 12px;
+}
+
+hr {
+    background-color: #666666;
+    border: 0 none;
+    color: #666666;
+    height: 1px;
+}
+
+.suggested-username-tip {
+    background-color: #FFFFFF;
+    border: 1px solid #DEDEDB;
+    border-radius: 3px 3px 3px 3px;
+    display: none;
+    margin: -6px 0 12px 135px;
+    padding: 6px 8px 7px;
+    position: relative;
+    z-index: 2;
+}
+.suggested-username-tip .arrow {
+    background: url("stats-pointer.png") no-repeat scroll -47px 1px transparent;
+    display: block;
+    height: 9px;
+    left: 7px;
+    position: absolute;
+    top: -9px;
+    width: 20px;
+    z-index: 3;
+}
+.suggested-username-tip span {
+    color: #666666;
+    font-size: 11px;
+}
+
+.pane form p.fineprint, .pane form p.submit {
+    border: 0 none;
+    margin-left: 215px;
+}
+
+.pane form p {
+    clear: both;
+    color: #666666;
+    margin-left: 215px;
+}
+
+p.fineprint {
+    clear: left;
+    color: #999999;
+    float: left;
+    margin-bottom: 12px;
+    width: 225px;
+}
+
+.fineprint {
+    font-size: 11px;
+}
+.pane form p.fineprint, .pane form p.submit {
+    border: 0 none;
+    margin-left: 215px;
+}
+
+.pane form p {
+    clear: both;
+    color: #666666;
+    margin-left: 215px;
+}
+
+p.submit {
+    clear: left;
+    float: left;
+    margin-bottom: 0;
+    margin-top: 4px;
+    padding: 0;
+}
+
+p.terms, .submit {
+    clear: left;
+    float: left;
+    margin-top: 24px;
+    padding-bottom: 18px;
+    padding-left: 215px;
+}
+span.button-small, span.button-medium, span.button-large {
+    padding: 0;
+}
+
+.button-large {
+    background-position: 0 -1px;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px !important;
+    padding: 0 13px;
+}
+
+.button-large span {
+    line-height: 34px;
+}
+span.button-small span span.button-medium span, span.button-large span {
+    padding: 0;
+}
+.button span, .button-small span, .button-medium span, .button-large span {
+    display: inline-block;
+    height: 100%;
+    line-height :24px;
+}
+.button-small input, .button-medium input, .button-large input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    margin: 0;
+    outline: 0 none;
+    overflow: visible;
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+}
+.button-large input {
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 13px;
+}
+
+.checkbox {
+    clear: left;
+    color: #333333;
+    display: block;
+    float: left;
+    margin: 0.75em 0 0 215px;
+    width: 450px;
+}
+.checkbox input {
+    margin: 0 0.25em 0 0;
+}
+.checkbox label {
+    display: inline;
+    margin: 0;
+}
+
+#button-large-submit span{
+    float:left;
+}
+
+.field_with_errors input{
+    border: 1px solid red;
+}
+
+.keep-me-signin {
+    clear: left;
+    color: #333333;
+    display: block;
+    float: left;
+    padding-bottom: 16px;
+    padding-left: 215px;
+    width: 450px;
+}
+.keep-me-signin input {
+    margin: 0 0.25em 0 0;
 }

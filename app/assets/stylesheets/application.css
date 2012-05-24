@@ -20,6 +20,7 @@ body {
     font-size: 12px;
     text-align: center;
     background: url(homepage-gradient.png) repeat-x scroll left top #F5F5F1;
+    line-height:16px;
 }
 
 a:link, a:visited {
@@ -397,4 +398,9 @@ form#search-bar {
     top: 75.5px;
     left: 975.5px;
     display: none;
+}
+
+.red
+{
+    color:red;
 }

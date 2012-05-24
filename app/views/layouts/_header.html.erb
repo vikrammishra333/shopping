@@ -98,7 +98,7 @@
     </li>
     <% if signed_in? %>
       <li>
-        <%= link_to "Sign Out", "http://www.etsy.com/logout.php", :id => "sign-out", :title => "Sign Out" %>
+        <%= link_to "Sign Out", destroy_user_session_path, :method => "delete", :id => "sign-out", :title => "Sign Out" %>
       </li>
     <% end %>
   </ul>
@@ -110,7 +110,7 @@
       <%= link_to "Register", "https://www.etsy.com/join?from_page=http%3A%2F%2Fwww.etsy.com%2Findex.php&amp;ref=so_reg", :id => "register", :title => "Register"%>
     </li>
     <li class="sign-in-link">
-       <%= link_to "Sign In", "https://www.etsy.com/signin?from_page=http%3A%2F%2Fwww.etsy.com%2Findex.php", :id => "sign-in", :class => "inline-overlay-trigger", :title => "Sign in to your Etsy account"%>
+       <%= link_to "Sign In", new_user_session_path, :id => "sign-in", :class => "inline-overlay-trigger", :title => "Sign in to your Etsy account"%>
     </li>
     <% else %>
       <li class="activity">

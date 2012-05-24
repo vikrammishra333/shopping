@@ -1,5 +1,4 @@
-class Users::RegistrationsController < Devise::RegistrationsController
-  include DeviseHelper
+class Users::SessionsController < Devise::SessionsController
   before_filter :load_assets
 
   def new
@@ -10,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
   end
 
-  def update
+  def destroy
     super
   end
 
@@ -20,5 +19,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
     AssetManager.include_local_library [:application]
     AssetManager.include_css [:application, :users]
   end
-  
+
 end

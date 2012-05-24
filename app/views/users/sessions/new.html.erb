@@ -1,20 +1,52 @@
-<h2>Sign in</h2>
+<ul class="clear" id="breadcrumbs">
+  <li>
+    <a href="/">Home</a>
+    <span class="separator">›</span>
+  </li>
+  <li>Register</li>
+</ul>
+<div class="row row-narrow">
+  <div style="display: none;" class="message-container message-container-connections"></div>
+  <div class="form-container">
+    <div class="form-container-inner clear">
+      <div class="heading">
+        <h1 class="summary">Sign In to MFShop</h1>
+      </div>
+      <div class="pane" id="signin">
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :id => "login_form") do |f| %>
+          <div class="wrap clear">
+            <div class="input-group">
+              <%= f.label :email, "Email or Username:" %>
+              <%= f.text_field :email %>
+              <%#*<span id="username-existing-error" class="inline-input-error-message"></span>%>
+            </div>
+            <div class="input-group">
+              <%= f.label :password, "Password:" %>
+              <%= f.password_field :password, :id => "password", :class => "text", :autocomplete => "off" %>
+              <%#*<span id="password-existing-error" class="inline-input-error-message"></span>%>
+            </div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div>
-  <%= f.label :email, "Email:" %>
-  <%= f.email_field :email %></div>
+            <% if devise_mapping.rememberable? -%>
+              <div class="keep-me-signin"><%= f.check_box :remember_me, :class => "checkbox", :checked => "true" %> <%= f.label :remember_me, "Stay signed in" %></div>
+            <% end -%>
 
-  <div>
-    <%= f.label :password, "Password:" %>
-    <%= f.password_field :password %>
+            <p class="submit last">
+              <span class="button-large" id="button-large-submit">
+                <span><%= f.submit "Sign In", :id => "signin_button" %></span>
+              </span>
+            </p>
+
+            <hr />
+            
+            <p class="forgot-password last">
+              <%= link_to "Forgot your password?", new_user_password_path %>
+            </p>
+            <p class="forgot-password last">
+              <%= link_to "Forgot your username or email?", new_user_password_path %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+</div>

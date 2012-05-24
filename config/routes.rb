@@ -1,9 +1,11 @@
 ShoppingCart::Application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "users/registrations"}
+  devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions"}
 
   resources :categories
 
   resources :products
+
+  root :to => "products#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
