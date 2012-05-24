@@ -404,3 +404,23 @@ form#search-bar {
 {
     color:red;
 }
+
+.notice{
+    color:green;
+    text-align:center;
+}
+.alert{
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFEEEE;
+    border-color: -moz-use-text-color pink pink;
+    border: 1px solid pink;
+    clear: left;
+    color: #A80308;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+    text-align:center;
+}

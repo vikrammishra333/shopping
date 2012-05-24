@@ -12,6 +12,9 @@
       <div class="heading">
         <h1 class="summary">Sign In to MFShop</h1>
       </div>
+      <% if not alert.nil? %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
       <div class="pane" id="signin">
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :id => "login_form") do |f| %>
           <div class="wrap clear">
