@@ -7,6 +7,8 @@ ShoppingCart::Application.routes.draw do
 
   root :to => "products#index"
 
+  match '/auth/:provider/callback', :to => 'users/sessions#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

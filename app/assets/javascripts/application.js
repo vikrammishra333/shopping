@@ -13,3 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 
+$(document).ready(function(){
+
+   var fb = $('#facebook-register');
+   
+   var initialize = function(){
+        fb.click(redirectToFacebook);
+    }
+
+    var redirectToFacebook = function(){
+        location.href = '/auth/facebook';
+    }
+
+
+    $('body').bind('ajaxComplete', function() {
+
+        initialize();
+
+    });
+
+    initialize();
+});
