@@ -106,7 +106,10 @@ h1 {
     float: left;
     margin-right: 10px;
 }
-
+.button-fb.button-large span {
+    background-position: 0 5px;
+    padding-left: 36px;
+}
 .button-fb.button-large {
     background-color: #3866B0;
     border-color: #728FC4;
@@ -120,6 +123,13 @@ h1 {
     line-height: 33px !important;
     padding: 0 13px;
 }
+.button-fb span, .button-tw span {
+    background: url("fb.png") no-repeat scroll 0 -89px transparent;
+}
+.button-large span {
+    line-height: 34px;
+}
+
 
 .button-small, .button-medium, .google-translate-control .goog-te-gadget-link, .button-large, .registry-button-container, .button-fave {
     background: url("buttons-master.png") repeat-x scroll 0 -121px #1B9DBC;
@@ -403,9 +413,7 @@ span.button-small, span.button-medium, span.button-large {
     padding: 0 13px;
 }
 
-.button-large span {
-    line-height: 34px;
-}
+
 span.button-small span span.button-medium span, span.button-large span {
     padding: 0;
 }
@@ -413,6 +421,9 @@ span.button-small span span.button-medium span, span.button-large span {
     display: inline-block;
     height: 100%;
     line-height :24px;
+}
+.button-large span {
+    line-height: 34px;
 }
 .button-small input, .button-medium input, .button-large input {
     background: none repeat scroll 0 0 transparent;

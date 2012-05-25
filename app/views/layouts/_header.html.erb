@@ -107,7 +107,7 @@
   <ul id="main-nav">
     <% if not signed_in? %>
     <li class="register-link">
-      <%= link_to "Register", "https://www.etsy.com/join?from_page=http%3A%2F%2Fwww.etsy.com%2Findex.php&amp;ref=so_reg", :id => "register", :title => "Register"%>
+      <%= link_to "Register", new_user_registration_path, :id => "register", :title => "Register"%>
     </li>
     <li class="sign-in-link">
        <%= link_to "Sign In", new_user_session_path, :id => "sign-in", :class => "inline-overlay-trigger", :title => "Sign in to your Etsy account"%>

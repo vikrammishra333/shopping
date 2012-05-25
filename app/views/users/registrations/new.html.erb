@@ -11,7 +11,7 @@
     <div class="form-container-inner clear">
       <div class="heading">
         <h1>Create an Etsy account and start shopping</h1>
-        <a class="signin-link" href="https://www.etsy.com/signin?from_page=http%3A%2F%2Fwww.etsy.com%2Findex.php">Sign In</a>
+        <%= link_to "Sign In", new_user_session_path, :id => "sign-in", :class => "signin-link", :title => "Sign in to your Etsy account"%>
       </div>
       <div class="pane clear" id="register">
         <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :id => "registration-form") do |f| %>
