@@ -26,6 +26,8 @@ gem 'omniauth'
 gem 'client_side_validations'
 gem "paperclip"
 gem 'passenger'
+gem 'capistrano'
+gem 'pg'
 
 
 # To use ActiveModel has_secure_password
