@@ -1,5 +1,5 @@
 ShoppingCart::Application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions", :omniauth_callbacks => "'users/sessions"}
+  devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions"}
 
   resources :categories
 
