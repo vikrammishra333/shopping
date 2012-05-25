@@ -22,7 +22,7 @@ $(document).ready(function(){
     }
 
     var redirectToFacebook = function(){
-        location.href = '/auth/facebook';
+        location.href = '/auth/twitter';
     }
 
 
