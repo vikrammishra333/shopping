@@ -1,5 +1,5 @@
 ShoppingCart::Application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions"}
+  devise_for :users, :controllers => {:registrations => "users/registrations", :sessions => "users/sessions"}, :format => false
 
   resources :categories
 
@@ -7,7 +7,7 @@ ShoppingCart::Application.routes.draw do
 
   root :to => "products#index"
 
-  match '/auth/:provider/callback', :to => 'users/sessions#create'
+  match '/auth/:provider/callback', :to => 'users#callback'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
