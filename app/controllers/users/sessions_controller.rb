@@ -6,8 +6,8 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def create
-    #super
-    @user = request.env['omniauth.auth']
+    super
+    
   end
 
   def destroy

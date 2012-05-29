@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MFShop</title>
+  <%= render 'layouts/stylesheets' %>
+  <%= render 'layouts/javascript' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="main-body" class="transitional-wide">
+    <div id="header" class="header">
+     <%= render 'layouts/header' %>
+    </div>
+    <div style="clear:both"></div>
+    <div id="content" class="clear">
+       <%= yield %>
+    </div>
+    <div style="clear:both"></div>
+    <div id="footer"
+      <%= render 'layouts/footer' %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,10 +1,18 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(@user, :as => current_user, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= 
+  #devise_error_messages!
+  %>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
+ <div><%= f.label :first_name %><br />
+  <%= f.text_field :first_name %></div>
+
+ <div><%= f.label :last_namel %><br />
+  <%= f.text_field :larst_name %></div>
+
 
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
