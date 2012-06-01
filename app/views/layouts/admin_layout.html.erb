@@ -17,8 +17,11 @@
     </div>
     <div style="clear:both"></div>
     <div id="content" class="clear">
-      <div class="row row-narrow">
+      <div class="primary">
         <%= yield %>
+      </div>
+      <div class="secondary">
+        <%= render "layouts/left_admin_menu" %>
       </div>
     </div>
     <div style="clear:both"></div>

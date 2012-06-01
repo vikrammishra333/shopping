@@ -2,6 +2,7 @@ class Admin::ProductsController < AdminController
   # GET /products
   # GET /products.json
   def index
+    @categories = Category.all
     @products = Product.all
 
     respond_to do |format|
@@ -28,7 +29,7 @@ class Admin::ProductsController < AdminController
     @product = Product.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html{render :layout => false} # new.html.erb
       format.json { render json: @product }
     end
   end

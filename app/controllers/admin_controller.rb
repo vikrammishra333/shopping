@@ -23,7 +23,8 @@ class AdminController < ApplicationController
   #loading assets according to requirement
   def load_assets
     AssetManager.include_local_library [:application, :admin_layout_data_table]
-    AssetManager.include_css [:application, :admin_layout]
+    AssetManager.include_css [:application, :admin_layout, :colorbox]
+    AssetManager.include_contrib_library [:colorbox]
   end
 
 

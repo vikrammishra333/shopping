@@ -1,29 +1,44 @@
 <h1>Listing products</h1>
 
-<table>
-  <tr>
+<table id="products" class="display" data-source="<%= admin_products_url(format: "json") %>" >
+  <thead>
+    <th>Image</th>
     <th>Title</th>
     <th>Description</th>
-    <th>Price</th>
+    <th>Category</th>
+    <th>Price($)</th>
     <th>Available</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.title %></td>
-    <td><%= product.description %></td>
-    <td><%= product.price %></td>
-    <td><%= product.available %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td class="product_image"><%= link_to(image_tag product.photo.url(:small)) %></td>
+        <td class="product_title"><%= product.title %></td>
+        <td class="description_product">
+          <% if product.description.length > 55 %>
+            <%= product.description[0..55]+' ...'  %> <%=link_to ' More', "#" %>
+          <% else %>
+            <%= product.description %>
+          <% end %>
+        </td>
+        <td class="product_category"><%= product.category.title %></td>
+        <td class="product_price"><%= product.price %></td>
+        <td class="product_available"><%= product.available %></td>
+        <td class="product_actions actions">
+          <%= link_to 'Show', admin_product_path(product), :class => "table_action_link"  %>
+          <%= link_to 'Edit', edit_admin_product_path(product), :class => "table_action_link"  %>
+          <%= link_to 'Destroy', admin_product_path(product), confirm: 'Are you sure?', method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />
-
-<%= link_to 'New Product', new_product_path %>
+<div class="dataTables_category_select" id="category_select">
+  <%= select_tag("category", options_from_collection_for_select(@categories, "id", "title"), :prompt => "Select Category") %>
+</div>
+<div class="dataTables_add" id="products_add">
+  <%= link_to 'Add a New Product', new_admin_product_path, :id => "add_product", :class => "add_item" %>
+</div>

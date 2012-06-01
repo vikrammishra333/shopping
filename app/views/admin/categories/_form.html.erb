@@ -10,20 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title, "Category Title:" %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :parent_id, "Select Parent Category:" %><br />
-    <%= f.select(:parent_id, @categories.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Select Category'}) %>
-  </div>
-  <div class="field">
-    <%= f.label :description, "Category Details" %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="wrap clear">
+    <div class="input-group">
+      <%= f.label :title, "Category Title:" %>
+      <%= f.text_field :title, :class => "text", :maxlength => "40" %>
+    </div>
+    <div class="input-group">
+      <%= f.label :parent_id, "Select Parent Category:" %>
+      <%= f.select(:parent_id, @categories.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Select Category'}) %>
+    </div>
+    <div class="input-group">
+      <%= f.label :description, "Category Details:" %>
+      <%= f.text_area :description, :rows => "3", :cols => "40" %>
+    </div>
+    <p class="submit">
+      <span class="button-large" id="button-large-submit">
+        <span><%= f.submit "Create", :id => "register_button" %></span>
+      </span>
+    </p>
   </div>
 <% end %>

@@ -30,7 +30,7 @@ class Admin::CategoriesController < AdminController
     @category = Category.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html{render :layout => false} # new.html.erb
       format.json { render json: @category }
     end
   end

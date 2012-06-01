@@ -1,0 +1,135 @@
+/*
+    Document   : admin_popup.css
+    Created on : 1 Jun, 2012, 6:35:58 PM
+    Author     : vikram
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+
+root {
+    display: block;
+}
+.row {
+    clear: left;
+    position: relative;
+    width: 500px;
+}
+.row.row-narrow {
+    margin: 0 auto;
+    width: 400px;
+}
+.form-container {
+    background-color: #EDEDE7;
+    border-radius: 9px 9px 9px 9px;
+}
+.form-container-inner {
+    background-color: #FFFFFF;
+    border: 1px solid #DADCDC;
+    border-radius: 5px 5px 5px 5px;
+}
+.heading {
+    float: left;
+    padding-top: 18px;
+    position: relative;
+    width: 100%;
+}
+.form-container .heading {
+    background-color: #F5F5F1;
+    border-radius: 5px 5px 0 0;
+    border-top: 1px solid #FFFFFF;
+    float: none;
+    margin: 0;
+    padding: 25px 21px 28px;
+    width: auto;
+}
+.form-container .heading h1 {
+    color: #444444;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 26px;
+}
+
+.heading h1 {
+    color: #080808;
+    display: inline;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 18px;
+    vertical-align: baseline;
+}
+
+h1 {
+    font-size: 16px;
+}
+
+.pane {
+    border-top: 1px solid #DFE1E1;
+}
+
+.pane form .connect-wrap p {
+    color: #888888;
+    margin: 0;
+}
+
+.pane form p {
+    clear: both;
+    color: #666666;
+}
+.pane .wrap {
+    padding: 13px 15px;
+}
+
+.input-group:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+.input-group {
+    min-height: 1%;
+    padding-bottom: 12px;
+    width:400px;
+}
+
+.input-group {
+    clear: left;
+    position: relative;
+}
+
+.input-group .label, .input-group label {
+    color: #333333;
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    margin-top: 6px;
+    text-align: right;
+    width: 130px;
+}
+
+.input-group input, .input-group textarea {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #959595 #D3D3D3 #D3D3D3 #959595;
+    border-style: solid;
+    border-width: 1px;
+    color: #333333;
+    font-family: arial;
+    font-size: 12px;
+    margin: 0 0 0.2em;
+    padding: 6px;
+    float: left;
+    width: 200px;
+}

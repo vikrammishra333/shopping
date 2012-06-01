@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
 
   validates :title, :presence => true, :uniqueness => true
   validates :description, :presence => true
-
+  validates :parent_id, :presence => true
   has_many :products
 
 end
