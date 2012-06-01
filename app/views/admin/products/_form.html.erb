@@ -1,0 +1,41 @@
+<%= form_for([:admin,@product]) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id, "Select Category:" %><br />
+    <%= f.select(:category_id, @categories.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Select Category'}) %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :available %><br />
+    <%= f.number_field :available %>
+  </div>
+  <div class="field">
+    <%= f.label :photo, "Upload Photo" %><br />
+    <%= f.file_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

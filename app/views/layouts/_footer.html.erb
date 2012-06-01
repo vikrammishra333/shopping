@@ -28,36 +28,4 @@
     <span class="spinner-small" id="footer-spinner"></span>
   </p>
 </div>
-
-<div style="" class="footer-nag" id="locale-nag">
-  <div class="container" id="locale-nag-suggestion">
-    <h3>
-      <span id="locale-nag-message">Hi! We'd like to set these regional settings for you:</span>
-      <span class="settings">
-        <span id="locale-nag-language">English (UK)</span>,
-        <span class="currency-symbol">$</span>
-        <span id="locale-nag-currency">United States Dollar</span>
-        <span class="currency-code">USD</span>,
-        <span id="locale-nag-region">India</span>
-      </span>
-      <a href="#" id="locale-nag-language-switch">Show this message in English</a>
-    </h3>
-
-    <div class="primary-actions">
-      <span class="button-medium">
-        <span>
-          <input type="submit" value="Okay" name="save" />
-        </span>
-      </span>
-      <span class="button-medium button-medium-grey">
-        <span>
-          <input type="submit" value="No thanks" name="cancel" />
-        </span>
-      </span>
-    </div>
-  </div>
-
-  <div style="display:none;" class="container" id="locale-nag-confirm">
-    <h3>Your preferences have been saved. You can always update these regional settings later at the bottom of any page.</h3>
-  </div>
-</div>
+<%= render "layouts/overlay" %>

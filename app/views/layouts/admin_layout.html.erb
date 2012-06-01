@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MFShop</title>
+  <%= render 'layouts/stylesheets' %>
+  <%= render 'layouts/javascript' %>
+  <%= javascript_include_tag "dataTables/jquery.dataTables"  %>
+  <%= stylesheet_link_tag "jquery.ui.core" %>
+  <%= stylesheet_link_tag "jquery.ui.theme" %>
+  <%= stylesheet_link_tag "dataTables/src/demo_table_jui" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="main-body" class="transitional-wide">
+    <div id="header" class="header">
+     <%= render 'layouts/header' %>
+    </div>
+    <div style="clear:both"></div>
+    <div id="content" class="clear">
+      <div class="row row-narrow">
+        <%= yield %>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+    <div id="footer"
+      <%= render 'layouts/footer' %>
+    </div>
+  </div>
+</body>
+</html>

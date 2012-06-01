@@ -14,6 +14,10 @@ ShoppingCart::Application.routes.draw do
   devise_scope :user do
     match '/auth/:provider/callback', :to => 'users/registrations#callback'
   end
+
+  namespace :admin do
+    resources :categories, :products
+  end
   
 
   # The priority is based upon order of creation:

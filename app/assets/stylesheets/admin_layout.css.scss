@@ -1,0 +1,56 @@
+/*
+    Document   : admin_layout.css
+    Created on : 30 May, 2012, 4:27:59 PM
+    Author     : vikram
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+
+root {
+    display: block;
+}
+
+.row {
+    clear: left;
+    margin: 0 auto 36px;
+    position: relative;
+    width: 980px;
+    color: #444444;
+}
+.row.row-narrow {
+    margin: 0 auto;
+    padding-top: 21px;
+    width: 775px;
+}
+
+.row h1{
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 26px;
+    width: 500px;
+    margin-bottom:20px;
+}
+
+.display th
+{
+    text-align:center;
+}
+
+table.display thead th:last-child {
+    cursor: default;
+}
+
+.display #title{width:20%;}
+.display #description{width:60%;}
+.display #actions{width:20%;}
+
+.display .table_action_link{
+    margin-right:5px;
+    margin-left:5px;
+    display:inline;
+}

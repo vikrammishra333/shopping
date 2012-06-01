@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120524062226) do
+ActiveRecord::Schema.define(:version => 20120530094004) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "parent_id"
   end
 
   create_table "products", :force => true do |t|
@@ -25,9 +26,13 @@ ActiveRecord::Schema.define(:version => 20120524062226) do
     t.text     "description"
     t.float    "price"
     t.integer  "available"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "category_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "roles", :force => true do |t|
@@ -38,8 +43,8 @@ ActiveRecord::Schema.define(:version => 20120524062226) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",   :null => false
+    t.string   "encrypted_password",     :default => "",   :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -48,14 +53,14 @@ ActiveRecord::Schema.define(:version => 20120524062226) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "role_id"
+    t.integer  "role_id",                :default => 2
     t.string   "gender"
     t.string   "username"
-    t.boolean  "newsletter"
+    t.boolean  "newsletter",             :default => true
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

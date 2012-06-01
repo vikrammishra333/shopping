@@ -12,24 +12,22 @@ class User < ActiveRecord::Base
   validates :last_name, :presence => true
   validates :username, :presence => true, :uniqueness => true
 
+  belongs_to :role, :foreign_key => :role_id
 
-#  def self.find_by_email_or_username (email, username)
-#    user = self.where("email = ? OR username = ?", email, username)
-#    return user
-#  end
-#
-  def self.check_email(auth)
-    user = self.where("email = ? OR username = ?", auth.extra.raw_info.email, auth.extra.raw_info.username)
 
-    first_name = auth.extra.raw_info.first_name+' '+auth.extra.raw_info.middle_name
-    
-    if user.empty? || user.nil?
-      user = User.create!(:email => auth.extra.raw_info.email, :username => auth.extra.raw_info.username, :first_name => first_name,
-             :last_name => auth.extra.raw_info.last_name, :gender => auth.extra.raw_info.gender)
+
+  # check if current user is admin and return true
+  # if not return false 
+  def check_admin?
+    if not self.role.nil?
+      if self.role.title == 'admin'
+        true
+      else
+        false
+      end
+    else
+      false
     end
-
-    return user
-
   end
 
 end

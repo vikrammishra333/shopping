@@ -18,6 +18,8 @@ group :assets do
   gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-ui-rails'
 end
 
 gem 'jquery-rails'
@@ -33,7 +35,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'omniauth-google-oauth2'
-
+gem 'will_paginate'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

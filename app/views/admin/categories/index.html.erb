@@ -1,0 +1,36 @@
+
+<h1>Listing categories</h1>
+
+<table id="categories" class="display" data-source="<%= admin_categories_url(format: "json") %>">
+  <thead>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td id="title"><%= category.title %></td>
+        <%#*<td id="description">%>
+          <%#= "#{truncate(category.description, :length => 70, :omission => '...More')}" %>
+        <%#*</td>%>
+        <td id="description">
+          <% if category.description.length > 65 %>
+            <%= category.description[0..65]+' ...'  %> <%=link_to ' More', "#" %>
+          <% else %>
+            <%= category.description %>
+          <% end %>
+        </td>
+        <td id="actions">
+          <%= link_to 'Show', admin_category_path(category), :class => "table_action_link" %>
+          <%= link_to 'Edit', edit_admin_category_path(category), :class => "table_action_link" %>
+          <%= link_to 'Destroy', admin_category_path(category), confirm: 'Are you sure?', method: :delete%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New category', new_admin_category_path %>

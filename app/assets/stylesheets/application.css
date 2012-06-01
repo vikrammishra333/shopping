@@ -791,7 +791,53 @@ ul, ol {
 .footer-nag .container .primary-actions .button-medium {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 }
+.button-fb.button-large span {
+    background-position: 0 5px;
+    padding-left: 36px;
+}
+.button-fb.button-large {
+    background-color: #3866B0;
+    border-color: #728FC4;
+    padding-left: 0;
+}
 
+.button-large {
+    background-position: 0 -1px;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px !important;
+    padding: 0 13px;
+}
+.button-fb span, .button-tw span {
+    background: url("fb.png") no-repeat scroll 0 -89px transparent;
+}
+.button-large span {
+    line-height: 34px;
+}
+
+
+.button-small, .button-medium, .google-translate-control .goog-te-gadget-link, .button-large, .registry-button-container, .button-fave {
+    background: url("buttons-master.png") repeat-x scroll 0 -121px #1B9DBC;
+    border-color: #67BDD4 #4AB1CC #359BBD;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 #E8E8E8;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 23px;
+    line-height: 23px;
+    margin-bottom: 9px;
+    outline: 0 none;
+    padding: 0 11px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: auto;
+}
 span.button-small, span.button-medium, span.button-large {
     padding: 0;
 }
@@ -803,5 +849,53 @@ span.button-small, span.button-medium, span.button-large {
 
 .button-medium input {
     padding: 0 11px;
+}
+span.button-small, span.button-medium, span.button-large {
+    padding: 0;
+}
+
+.button-large {
+    background-position: 0 -1px;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px !important;
+    padding: 0 13px;
+}
+
+
+span.button-small span span.button-medium span, span.button-large span {
+    padding: 0;
+}
+.button span, .button-small span, .button-medium span, .button-large span {
+    display: inline-block;
+    height: 100%;
+    line-height :24px;
+}
+.button-large span {
+    line-height: 34px;
+}
+.button-small input, .button-medium input, .button-large input {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    margin: 0;
+    outline: 0 none;
+    overflow: visible;
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+}
+.button-large input {
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 13px;
 }
 
