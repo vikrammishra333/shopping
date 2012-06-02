@@ -37,6 +37,6 @@ ShoppingCart::Application.configure do
   config.assets.debug = true
 
 
-  require 'ruby-debug'
+  #require 'ruby-debug'
 
 end
