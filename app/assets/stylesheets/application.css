@@ -544,7 +544,7 @@ body .tt-inner ul li {
     white-space: nowrap;
 }
 .tt-mini .tt-arrow {
-    background: url("/assets/dist/201205251337984324/images/sprites/main-sprite.png") no-repeat scroll -15px -569px transparent;
+    background: url("main-sprite.png") no-repeat scroll -15px -569px transparent;
     height: 12px;
     left: 50%;
     margin-left: -10px;

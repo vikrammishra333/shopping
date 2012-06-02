@@ -15,7 +15,7 @@
       <%= f.label :title, "Category Title:" %>
       <%= f.text_field :title, :class => "text", :maxlength => "40" %>
     </div>
-    <div class="input-group">
+    <div class="input-group" >
       <%= f.label :parent_id, "Select Parent Category:" %>
       <%= f.select(:parent_id, @categories.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Select Category'}) %>
     </div>

@@ -1,6 +1,12 @@
 class Product < ActiveRecord::Base
   attr_accessible :available, :description, :price, :title, :photo, :category_id
 
+  validates :title, :presence => true
+  validates :price, :presence => true
+  validates :category_id, :presence => true
+  validates :description, :presence => true
+  validates :available, :presence => true
+
   has_attached_file :photo,
                     :styles => {
                       :small => "50x50>",

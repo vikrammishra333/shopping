@@ -10,32 +10,35 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id, "Select Category:" %><br />
-    <%= f.select(:category_id, @categories.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Select Category'}) %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description, :rows => "3", :cols => "50"  %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :available %><br />
-    <%= f.number_field :available %>
-  </div>
-  <div class="field">
-    <%= f.label :photo, "Upload Photo" %><br />
-    <%= f.file_field :photo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+ <div class="wrap clear">
+    <div class="input-group">
+      <%= f.label :title, "Title:" %>
+      <%= f.text_field :title, :class => "text" %>
+    </div>
+    <div class="input-group">
+      <%= f.label :category_id, "Select Category:" %>
+      <%= f.select(:category_id, @categories.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Select Category'}) %>
+    </div>
+    <div class="input-group">
+      <%= f.label :description, "Description:" %>
+      <%= f.text_area :description, :rows => "3", :cols => "40"  %>
+    </div>
+    <div class="input-group">
+      <%= f.label :price, "Price(in Dollar):" %>
+      <%= f.text_field :price, :class => "text"  %>
+    </div>
+    <div class="input-group">
+      <%= f.label :available, "Total Availability:" %>
+      <%= f.number_field :available, :class => "text"  %>
+    </div>
+    <div class="input-group">
+      <%= f.label :photo, "Upload Photo:" %>
+      <%= f.file_field :photo %>
+    </div>
+     <p class="submit">
+      <span class="button-large" id="button-large-submit">
+        <span><%= f.submit "Create", :id => "register_button" %></span>
+      </span>
+    </p>
+ </div>
 <% end %>

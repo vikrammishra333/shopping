@@ -19,8 +19,9 @@ $(document).ready(function(){
         
         categoryGrid.dataTable({
             sPaginationType: "full_numbers",
-            bJQueryUI: true,
-            "aoColumns": [ null,null,{ "bSortable": false }] 
+            bJQueryUI   : true,
+            "aoColumns" : [ null,null,{ "bSortable": false }],
+            'bRetrieve' : true
         });
         
         $('#categories_add').css('display','block');
@@ -33,8 +34,9 @@ $(document).ready(function(){
        
         productGrid.dataTable({
             sPaginationType: "full_numbers",
-            bJQueryUI: true,
-            "aoColumns": [{ "bSortable": false }, null,null,null,null, null,{ "bSortable": false }]
+            bJQueryUI   : true,
+            "aoColumns" : [{ "bSortable": false }, null,null,null,null, null,{ "bSortable": false }],
+            'bRetrieve' : true
         });
 
         $('#products_wrapper').children(':first-child').append($('div#category_select'));

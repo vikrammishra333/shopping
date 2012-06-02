@@ -1,8 +1,12 @@
 class Admin::ProductsController < AdminController
+
+  #retrieve all categories, which will be used in each action except show and destroy actions
+  before_filter :find_categories, :except => [:show, :destroy]
+
+  
   # GET /products
   # GET /products.json
   def index
-    @categories = Category.all
     @products = Product.all
 
     respond_to do |format|
@@ -25,7 +29,6 @@ class Admin::ProductsController < AdminController
   # GET /products/new
   # GET /products/new.json
   def new
-    @categories = Category.all
     @product = Product.new
 
     respond_to do |format|
@@ -36,8 +39,11 @@ class Admin::ProductsController < AdminController
 
   # GET /products/1/edit
   def edit
-    @categories = Category.all
     @product = Product.find(params[:id])
+
+    respond_to do |format|
+      format.html{render :layout => false} # new.html.erb 
+    end
   end
 
   # POST /products
@@ -83,4 +89,14 @@ class Admin::ProductsController < AdminController
       format.json { head :no_content }
     end
   end
-end
+
+
+  private
+
+  #private method to retrieve all categories from DB.
+  def find_categories
+    #retrieve all categories from DB.
+    @categories = Category.all
+  end # end method
+
+end # end Class

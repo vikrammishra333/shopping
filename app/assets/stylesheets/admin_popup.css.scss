@@ -21,7 +21,8 @@ root {
 }
 .row.row-narrow {
     margin: 0 auto;
-    width: 400px;
+    width: 500px;
+    height:350px;
 }
 .form-container {
     background-color: #EDEDE7;
@@ -96,7 +97,6 @@ h1 {
 .input-group {
     min-height: 1%;
     padding-bottom: 12px;
-    width:400px;
 }
 
 .input-group {
@@ -113,10 +113,10 @@ h1 {
     margin-right: 10px;
     margin-top: 6px;
     text-align: right;
-    width: 130px;
+    width: 185px;
 }
 
-.input-group input, .input-group textarea {
+.input-group input, .input-group textarea, .input-group select {
     -moz-border-bottom-colors: none;
     -moz-border-image: none;
     -moz-border-left-colors: none;
@@ -132,4 +132,14 @@ h1 {
     padding: 6px;
     float: left;
     width: 200px;
+}
+
+#category_parent_id{
+    width:215px;
+}
+
+.row.row-product{
+    margin: 0 auto;
+    width: 550px;
+    height:500px;
 }

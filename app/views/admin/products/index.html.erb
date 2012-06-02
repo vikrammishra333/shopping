@@ -27,7 +27,7 @@
         <td class="product_available"><%= product.available %></td>
         <td class="product_actions actions">
           <%= link_to 'Show', admin_product_path(product), :class => "table_action_link"  %>
-          <%= link_to 'Edit', edit_admin_product_path(product), :class => "table_action_link"  %>
+          <%= link_to 'Edit', edit_admin_product_path(product), :class => "table_action_link add_item"  %>
           <%= link_to 'Destroy', admin_product_path(product), confirm: 'Are you sure?', method: :delete %>
         </td>
       </tr>
