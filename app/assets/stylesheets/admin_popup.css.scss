@@ -17,11 +17,11 @@ root {
 .row {
     clear: left;
     position: relative;
-    width: 500px;
+    width: 600px;
 }
 .row.row-narrow {
     margin: 0 auto;
-    width: 500px;
+    width: 600px;
     height:350px;
 }
 .form-container {
@@ -80,6 +80,7 @@ h1 {
 .pane form p {
     clear: both;
     color: #666666;
+    margin-left:65px;
 }
 .pane .wrap {
     padding: 13px 15px;
@@ -134,12 +135,58 @@ h1 {
     width: 200px;
 }
 
-#category_parent_id{
+#category_parent_id, #product_category_id{
     width:215px;
 }
 
 .row.row-product{
     margin: 0 auto;
-    width: 550px;
+    width: 650px;
     height:500px;
 }
+
+
+.input-group-error label {
+    color: #A80308 !important;
+}
+.input-group-error input.text, .input-group-error input.text:focus, .input-group-error textarea, .input-group-error textarea:focus, .input-group-error textarea.text, .input-group-error textarea.text:focus {
+    border-color: #A80308 !important;
+}
+.input-group input.error, .input-group input.error:focus, .input-group textarea.error, .input-group textarea.error:focus {
+    border-color: #A80308 !important;
+    margin-bottom: 0;
+}
+.inline-error, .input-group-error .inline-error {
+    color: #A80308 !important;
+}
+
+.inline-input-error-message{
+    float:left;
+    border: 1px solid pink;
+    padding: 5px 8px;
+}
+
+.inline-input-error-message {
+    background-color: #FFEEEE;
+    border: 1px solid pink;
+    clear: left;
+    color: #A80308;
+    float: left;
+    margin-bottom: 8px;
+    padding: 4px 8px;
+}
+
+inline-disclaimer-message, .inline-input-error-message {
+    clear: none;
+    margin-bottom: 0;
+    margin-left: 2px;
+    width: 135px;
+}
+
+.field_with_errors{
+    float:left;
+}
+
+#product-photo-error{margin-left:10px;}
+
+input[type=file]{width:170px;}

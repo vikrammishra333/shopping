@@ -1,43 +1,74 @@
-<%= form_for([:admin,@product]) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<%= form_for([:admin,@product], :remote => true) do |f| %>
 
-      <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
- <div class="wrap clear">
-    <div class="input-group">
+  <% customize_error_message(@product) %>
+
+  <div class="wrap clear">
+    <div class="input-group <%= "input-group-error" unless  @msg[:title].nil? %>">
       <%= f.label :title, "Title:" %>
       <%= f.text_field :title, :class => "text" %>
+      <%  if not @msg[:title].nil? %>
+        <span id="product-title-error" class="inline-input-error-message">
+          <%= @msg[:title].join  %>
+        </span>
+      <% end %>
     </div>
-    <div class="input-group">
+    <div class="input-group <%= "input-group-error" unless  @msg[:category_id].nil? %>">
       <%= f.label :category_id, "Select Category:" %>
       <%= f.select(:category_id, @categories.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Select Category'}) %>
+      <%  if not @msg[:category_id].nil? %>
+        <span id="product-category-id-error" class="inline-input-error-message">
+          <%= @msg[:category_id].join  %>
+        </span>
+      <% end %>
     </div>
-    <div class="input-group">
+    <div class="input-group <%= "input-group-error" unless  @msg[:description].nil? %>">
       <%= f.label :description, "Description:" %>
       <%= f.text_area :description, :rows => "3", :cols => "40"  %>
+      <%  if not @msg[:description].nil? %>
+        <span id="product-description-error" class="inline-input-error-message">
+          <%= @msg[:description].join  %>
+        </span>
+      <% end %>
     </div>
-    <div class="input-group">
+    <div class="input-group  <%= "input-group-error" unless  @msg[:price].nil? %>">
       <%= f.label :price, "Price(in Dollar):" %>
       <%= f.text_field :price, :class => "text"  %>
+      <%  if not @msg[:price].nil? %>
+        <span id="product-price-error" class="inline-input-error-message">
+          <%= @msg[:price].join  %>
+        </span>
+      <% end %>
     </div>
-    <div class="input-group">
+    <div class="input-group  <%= "input-group-error" unless  @msg[:available].nil? %>">
       <%= f.label :available, "Total Availability:" %>
       <%= f.number_field :available, :class => "text"  %>
+      <%  if not @msg[:available].nil? %>
+        <span id="product-available-error" class="inline-input-error-message">
+          <%= @msg[:available].join  %>
+        </span>
+      <% end %>
     </div>
-    <div class="input-group">
+    <div class="input-group  <%= "input-group-error" unless  @msg[:photo].nil? %>">
       <%= f.label :photo, "Upload Photo:" %>
       <%= f.file_field :photo %>
+      <%  if not @msg[:photo].nil? %>
+        <span id="product-photo-error" class="inline-input-error-message">
+          <%= @msg[:photo].join  %>
+        </span>
+      <% end %>
     </div>
      <p class="submit">
       <span class="button-large" id="button-large-submit">
-        <span><%= f.submit "Create", :id => "register_button" %></span>
+        <span><%= f.submit "Submit" %></span>
+      </span>
+       <span class="button-large button-medium-grey">
+        <span>
+          <%=
+            #button_tag "Cancel", :class => "cancel"
+            button_tag(:type => 'button', :class => "cancel") do
+              content_tag(:normal, 'Cancel')
+            end
+          %>
       </span>
     </p>
  </div>

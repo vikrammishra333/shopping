@@ -1,0 +1,8 @@
+
+<% if @product.errors.blank? %>
+  $.colorbox.close();
+  parent.location.reload();
+<% else %>
+  $("#product_create").html('<%= escape_javascript( render :partial => "admin/products/form" ) %>').fadeIn();
+  
+<% end %>

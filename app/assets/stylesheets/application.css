@@ -841,7 +841,7 @@ span.button-small, span.button-medium, span.button-large {
     padding: 0;
 }
 
-.button-grey, .button-small-grey, .primary-actions .button-medium-grey, .button-large-grey {
+.button-grey, .button-small-grey, .primary-actions .button-medium-grey, .button-large-grey, form .button-medium-grey {
     background-color: #A0A0A0;
     border-color: #BEBEBE #B3B3B3 #9E9E9E;
 }

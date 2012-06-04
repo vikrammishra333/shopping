@@ -1,31 +1,44 @@
-<%= form_for([:admin,@category]) do |f| %>
-  <% if @category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
-      <ul>
-      <% @category.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([:admin,@category], :remote => true) do |f| %>
+  <%# if @category.errors.any? %>
+    <% customize_error_message(@category) %>
+  <%# end %>
   <div class="wrap clear">
-    <div class="input-group">
+    <div class="input-group <%= "input-group-error" unless  @msg[:title].nil? %>">
       <%= f.label :title, "Category Title:" %>
       <%= f.text_field :title, :class => "text", :maxlength => "40" %>
+      <%  if not @msg[:title].nil? %>
+        <span id="category-title-error" class="inline-input-error-message">
+          <%= @msg[:title].join  %>
+        </span>
+      <% end %>
     </div>
     <div class="input-group" >
       <%= f.label :parent_id, "Select Parent Category:" %>
       <%= f.select(:parent_id, @categories.collect {|p| [ p.title, p.id ] }, {:include_blank => 'Select Category'}) %>
     </div>
-    <div class="input-group">
+    <div class="input-group <%= "input-group-error" unless  @msg[:description].nil? %>">
       <%= f.label :description, "Category Details:" %>
       <%= f.text_area :description, :rows => "3", :cols => "40" %>
+      <%  if not @msg[:description].nil? %>
+        <span id="category-description-error" class="inline-input-error-message">
+          <%= @msg[:description].join  %>
+        </span>
+      <% end %>
     </div>
     <p class="submit">
       <span class="button-large" id="button-large-submit">
-        <span><%= f.submit "Create", :id => "register_button" %></span>
+        <span><%= f.submit "Submit" %></span>
+      </span>
+      <span class="button-large button-medium-grey">
+        <span>
+          <%=
+            #button_tag "Cancel", :class => "cancel"
+            button_tag(:type => 'button', :class => "cancel") do
+              content_tag(:normal, 'Cancel')
+            end
+          %>
+          
+        </span>
       </span>
     </p>
   </div>

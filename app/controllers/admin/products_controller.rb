@@ -1,3 +1,12 @@
+
+=begin
+  @File Name     :- products_controller.rb
+  @Create By     :- Vikram Kumar Mishra(Mindfire Solutions)
+  @Date Created  :- 2012-05-28
+  @Last Modified :-
+  @purpose       :- To handle CRUD products by admin
+=end
+
 class Admin::ProductsController < AdminController
 
   #retrieve all categories, which will be used in each action except show and destroy actions
@@ -6,17 +15,22 @@ class Admin::ProductsController < AdminController
   
   # GET /products
   # GET /products.json
+  # @params :- NONE
+  # @return :- Array OF PRODUCTS
   def index
     @products = Product.all
 
+    # send data in different format
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
-    end
-  end
+    end # end respond_to block
+  end # end action
 
   # GET /products/1
   # GET /products/1.json
+  # @params :- NONE(ID Via URL)
+  # @return :- Array(PRODUCT)
   def show
     @product = Product.find(params[:id])
 
@@ -53,11 +67,13 @@ class Admin::ProductsController < AdminController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to admin_product_path(@product), notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
+#        format.html { redirect_to admin_product_path(@product), notice: 'Product was successfully created.' }
+#        format.json { render json: @product, status: :created, location: @product }
+        format.js
       else
-        format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+#        format.html { render action: "new" }
+#        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -69,11 +85,13 @@ class Admin::ProductsController < AdminController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to admin_product_path(@product), notice: 'Product was successfully updated.' }
-        format.json { head :no_content }
+#        format.html { redirect_to admin_product_path(@product), notice: 'Product was successfully updated.' }
+#        format.json { head :no_content }
+         format.js
       else
-        format.html { render action: "edit" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+#        format.html { render action: "edit" }
+#        format.json { render json: @product.errors, status: :unprocessable_entity }
+         format.js
       end
     end
   end

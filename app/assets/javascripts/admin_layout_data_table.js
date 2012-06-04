@@ -7,11 +7,15 @@ $(document).ready(function(){
 
     var categoryGrid = $('#categories');
     var productGrid = $('#products');
+    var cBox = $('.cancel');
+    var oBox = $('.more');
 
     var initialize = function(){
        displayCategoryGrid();
        displayProductGrid();
        addAnItem();
+       cBox.live('click', closeCBox);
+       openCBox();
     }
 
     // display data grid for categories
@@ -53,6 +57,17 @@ $(document).ready(function(){
         $('.add_item').colorbox({
             transition:"none"
         });
+    }
+
+
+    var closeCBox = function(){
+        $.colorbox.close();
+    }
+
+    var openCBox = function(){
+        var id = oBox.attr('href');
+        //$("'"+id+"'").css('display','block');
+        oBox.colorbox({inline:true});
     }
 
     $('body').bind('ajaxComplete', function() {

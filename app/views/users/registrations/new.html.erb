@@ -31,24 +31,24 @@
           </div>
           <% devise_error_messages! %>
           <div class="wrap clear">
-            <div class="input-group" id="first_name_group">
+            <div class="input-group  <%= "input-group-error" unless  @msg[:first_name].nil? %>" id="first_name_group">
               <%= f.label :first_name, "First Name:" %>
               <%= f.text_field :first_name, :id => "first-name", :class => "text", :maxlength => "40" %>
-              <span id="first-name-disclaimer" class="inline-notice">
+              <span id="first-name-disclaimer " class="inline-notice <%= "fname_display" unless  @msg[:first_name].nil? %>">
                  Your name will be publicly displayed on Etsy. These fields are mandatory.
               </span>
              <%  if not @msg[:first_name].nil? %>
                <span id="first-name-error" class="inline-input-error-message">
-                 <%= "First Name "+@msg[:first_name].join  %>
+                 <%= @msg[:first_name].join  %>
                </span>
               <% end %>
             </div>
-            <div class="input-group" id="last_name_group">
+            <div class="input-group <%= "input-group-error" unless  @msg[:last_name].nil? %>" id="last_name_group">
               <%= f.label :last_name, "Last Name:" %>
               <%= f.text_field :last_name, :id => "last-name", :class => "text", :maxlength => "40" %>
               <%  if not @msg[:last_name].nil? %>
                 <span id="last-name-error" class="inline-input-error-message">
-                  <%= "Last Name "+@msg[:last_name].join %>
+                  <%= @msg[:last_name].join %>
                 </span>
               <% end  %>
             </div>
@@ -59,7 +59,7 @@
                 <%= f.radio_button :gender, 'private', :id => "private" %><%= f.label :gender, "Rather not say" %>
             </div>
             <hr />
-            <div class="input-group" id="email_group">
+            <div class="input-group   <%= "input-group-error" unless  @msg[:email].nil? %>" id="email_group">
               <%= f.label :email, "Email:" %>
               <%= f.email_field :email, :id => "email", :class => "text", :autocapitalize => "off", :autocorrect => "off" %>
               <span id="email-disclaimer" class="inline-disclaimer-message">
@@ -68,19 +68,19 @@
               </span>
               <%  if not @msg[:email].nil? %>
                 <span id="email-error" class="inline-input-error-message">
-                  <%= "Email "+@msg[:email].join %>
+                  <%= @msg[:email].join %>
                 </span>
               <% end %>
               
             </div>
 
-            <div class="input-group">
+            <div class="input-group   <%= "input-group-error" unless  @msg[:password].nil? %>">
               <%= f.label :password, "Password:" %>
               <%= f.password_field :password, :id => "password", :class => "text", :autocomplete => "off" %>
               <% if not @msg[:password].nil? %>
                 <span id="password-error" class="inline-input-error-message">
                   <% @msg[:password].each do |msg| %>
-                    <%= "Password "+ msg %>
+                    <%= msg %>
                     <br />
                   <% end %>
                 </span>
@@ -96,12 +96,12 @@
             
             <hr />
 
-            <div class="input-group input-group-username input-group-big-disclaimer" id="username-group">
+            <div class="input-group input-group-username input-group-big-disclaimer   <%= "input-group-error" unless  @msg[:username].nil? %>" id="username-group">
                 <%= f.label :username, "Username:" %>
                 <%= f.text_field :username, :maxlength => "20", :id => "username", :class => "text", :autocapitalize => "off", :autocorrect => "off" %>
                 <% if not @msg[:username].nil? %>
                   <span id="username-error" class="inline-input-error-message">
-                    <%= "Username "+@msg[:username].join %>
+                    <%=  @msg[:username].join %>
                   </span>
                 <% end %>
             </div>

@@ -13,7 +13,7 @@ module DeviseHelper
     return "" if resource.errors.empty?
 
     resource.errors.each do |key,value|
-    @msg[key] = resource.errors[key]
-   end
+      @msg[key] = resource.errors[key]
+    end
   end
 end

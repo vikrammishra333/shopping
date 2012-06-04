@@ -1,0 +1,9 @@
+
+<% if @category.errors.blank? %>
+  $.colorbox.close();
+  parent.location.reload();
+<% else %>
+  $('.inline-input-error-message').parent().addClass('input-group-error');
+  $("#category_create").html('<%= escape_javascript( render :partial => "admin/categories/form" ) %>').fadeIn();
+  
+<% end %>

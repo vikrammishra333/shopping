@@ -23,7 +23,7 @@ class Admin::CategoriesController < AdminController
       format.json { render json: @categories }
     end #end respond_to block
 
-  end # end method
+  end # end action
 
   # GET /categories/1
   # GET /categories/1.json
@@ -82,11 +82,13 @@ class Admin::CategoriesController < AdminController
     # send data in different format
     respond_to do |format|
       if @category.save # category saved successfully
-        format.html { redirect_to admin_category_path(@category), notice: 'Category was successfully created.' }
-        format.json { render json: @category, status: :created, location: @category }
+        #format.html { redirect_to admin_category_path(@category), notice: 'Category was successfully created.' }
+        #format.json { render json: @category, status: :created, location: @category }
+        format.js
       else  # category could not saved successfully
-        format.html { render action: "new" } # re-render the form with errors
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+#        format.html { render action: "new" } # re-render the form with errors
+#        format.json { render json: @category.errors, status: :unprocessable_entity }
+         format.js
       end # end if
     end # end respond_to block
   end # end action
@@ -102,11 +104,13 @@ class Admin::CategoriesController < AdminController
     # send data in different format
     respond_to do |format|
       if @category.update_attributes(params[:Category]) # category updated successfully
-        format.html { redirect_to admin_category_path(@category), notice: 'Category was successfully updated.' }
-        format.json { head :no_content }
+#        format.html { redirect_to admin_category_path(@category), notice: 'Category was successfully updated.' }
+#        format.json { head :no_content }
+         format.js
       else  # category could not updated successfully
-        format.html { render action: "edit" } # re-render the form with errors
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+#        format.html { render action: "edit" } # re-render the form with errors
+#        format.json { render json: @category.errors, status: :unprocessable_entity }
+         format.js
       end # end if
     end # end respond_to
   end # end action
@@ -124,7 +128,7 @@ class Admin::CategoriesController < AdminController
 
     # send data in different format
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to admin_categories_url }
       format.json { head :no_content }
     end# end respond_to
   end # end action

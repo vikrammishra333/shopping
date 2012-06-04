@@ -1,0 +1,8 @@
+
+<% if @category.errors.blank? %>
+  $.colorbox.close();
+  parent.location.reload();
+<% else %>
+  $("#category_create").html('<%= escape_javascript( render :partial => "admin/categories/form" ) %>').fadeIn();
+  
+<% end %>

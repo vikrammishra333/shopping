@@ -14,12 +14,13 @@
         <%#*<td id="description">%>
           <%#= "#{truncate(category.description, :length => 70, :omission => '...More')}" %>
         <%#*</td>%>
-        <td id="description">
+        <td class="description">
           <% if category.description.length > 60 %>
-            <%= category.description[0..60]+' ...'  %> <%=link_to ' More', "#" %>
+            <%= category.description[0..60]+' ...'  %> <%=link_to ' More', "#description_#{category.id}", :class => "more" %>
           <% else %>
             <%= category.description %>
           <% end %>
+          <div class="full_description" id="description_<%= category.id %>" style="display:none;"><%= category.description %></div>
         </td>
         <td class="actions" id="actions">
           <%= link_to 'Show', admin_category_path(category), :class => "table_action_link" %>
@@ -27,12 +28,12 @@
           <%= link_to 'Destroy', admin_category_path(category), confirm: 'Are you sure?', method: :delete%>
         </td>
       </tr>
+      
     <% end %>
   </tbody>
 </table>
 
 <br />
-
 
 <div class="dataTables_add" id="categories_add" style="display:none;">
   <%= link_to 'Add a New category', new_admin_category_path, :id => "add_category", :class => "add_item" %>
