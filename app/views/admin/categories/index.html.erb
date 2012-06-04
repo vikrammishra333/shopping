@@ -16,11 +16,11 @@
         <%#*</td>%>
         <td class="description">
           <% if category.description.length > 60 %>
-            <%= category.description[0..60]+' ...'  %> <%=link_to ' More', "#description_#{category.id}", :class => "more" %>
+            <%= category.description[0..60]+' ...'  %> <%=link_to ' More', "javascript:void(0)", :class => "more", :id => "description_#{category.id}" %>
           <% else %>
             <%= category.description %>
-          <% end %>
-          <div class="full_description" id="description_<%= category.id %>" style="display:none;"><%= category.description %></div>
+          <% end %> 
+          <div class="full_description" id="#description<%= category.id %>" style="display:none;"><%= category.description %></div>
         </td>
         <td class="actions" id="actions">
           <%= link_to 'Show', admin_category_path(category), :class => "table_action_link" %>

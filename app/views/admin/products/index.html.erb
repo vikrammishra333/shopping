@@ -17,10 +17,11 @@
         <td class="product_title"><%= product.title %></td>
         <td class="description_product">
           <% if product.description.length > 55 %>
-            <%= product.description[0..55]+' ...'  %> <%=link_to ' More', "#" %>
+            <%= product.description[0..55]+' ...'  %> <%=link_to ' More', "javascript:void(0)", :class => "more", :id => "description_#{product.id}" %>
           <% else %>
             <%= product.description %>
           <% end %>
+          <div class="full_description" id="#description<%= product.id %>" style="display:none;"><%= product.description %></div>
         </td>
         <td class="product_category"><%= product.category.title %></td>
         <td class="product_price"><%= product.price %></td>
