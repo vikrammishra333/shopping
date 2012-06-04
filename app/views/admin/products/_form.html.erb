@@ -50,7 +50,7 @@
     </div>
     <div class="input-group  <%= "input-group-error" unless  @msg[:photo].nil? %>">
       <%= f.label :photo, "Upload Photo:" %>
-      <%= f.file_field :photo %>
+      <%= f.file_field :photo, :id => "files" %>
       <%  if not @msg[:photo].nil? %>
         <span id="product-photo-error" class="inline-input-error-message">
           <%= @msg[:photo].join  %>
